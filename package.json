@@ -4,10 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/ensure-dev.mjs",
-    "build": "tsc -b && vite build",
+    "dev": "vite --config vite.atlas.config.ts",
+    "dev:gm": "node scripts/ensure-dev.mjs",
+    "build": "npm run test:atlas && tsc -p tsconfig.atlas.json && vite build --config vite.atlas.config.ts && node scripts/check-atlas-dist.mjs",
+    "build:gm": "tsc -b && vite build --outDir dist-gm",
+    "test:atlas": "node --test tests/atlas.test.ts",
+    "atlas:init": "node scripts/atlas.ts init",
+    "atlas:import": "node scripts/atlas.ts import",
+    "atlas:publish": "node scripts/atlas.ts publish",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview --config vite.atlas.config.ts"
   },
   "dependencies": {
     "react": "^19.2.7",

@@ -1,5 +1,16 @@
 # Interactive-GalaxyMap-Maker
 
+## History’s Retribution Cosmic Atlas
+
+This fork now includes a separate read-only player atlas with the hierarchy **Resonance → Wish / Hollow → planes → galaxies → systems → planets**. `npm run dev` starts the atlas; `npm run build` creates the player-only `dist/` output for Cloudflare Pages. The initial content is an explicitly labeled demonstration, not established campaign lore.
+
+The original editor is still available locally through `npm run dev:gm`. Keep GM drafts and exported campaigns in the ignored `private.local/` folder, never in this public repository. The player build consumes only an explicitly published snapshot.
+
+- [Atlas development, GM authoring, and publishing](docs/COSMIC-ATLAS.md)
+- [Cloudflare Pages settings and domain setup](docs/CLOUDFLARE-PAGES.md)
+
+The original project description follows. Its development commands now correspond to `dev:gm` / `build:gm`; the legacy production build has existing TypeScript errors documented in the atlas guide.
+
 A passion project I used to explore Cursor AI capabilities and how to best work with Cursor AI
 
 Allows for custom or procedural generation of interactive galaxies for long term campaigns. Includes an optional hotseat turn tracker per faction, fleet movements, regiment movements, area control, a timelapse of events, and more.

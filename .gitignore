@@ -9,6 +9,12 @@ node_modules
 # Build
 dist
 dist-ssr
+dist-gm
+private.local/
+*.private.json
+.env
+.env.*
+.wrangler/
 *.local
 
 # Editor
