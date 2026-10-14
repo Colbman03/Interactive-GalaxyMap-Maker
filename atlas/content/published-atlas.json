@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "title": "History’s Retribution",
+  "edition": "Cosmic Atlas · First survey",
+  "demo": true,
+  "nodes": [
+    { "id": "resonance", "parentId": null, "kind": "resonance", "name": "The Resonance", "summary": "Explore the atlas from its overarching reality into Wish and Hollow, then through planes, galaxies, systems, and worlds. This first survey demonstrates the structure; all locations below the realms are examples awaiting campaign lore." },
+    { "id": "wish", "parentId": "resonance", "kind": "realm", "name": "The Wish", "summary": "The higher point of the Resonance. Its planes are gathered here. Descriptions and locations will be added as they become known to the party.", "position": { "x": 0, "y": -180 } },
+    { "id": "hollow", "parentId": "resonance", "kind": "realm", "name": "The Hollow", "summary": "The lower point of the Resonance. Its planes are gathered here. Descriptions and locations will be added as they become known to the party.", "position": { "x": 0, "y": 180 } },
+    { "id": "example-wish-plane", "parentId": "wish", "kind": "plane", "name": "Example Wish plane", "summary": "An example plane for exploring the hierarchy. This is not established campaign lore." },
+    { "id": "example-hollow-plane", "parentId": "hollow", "kind": "plane", "name": "Example Hollow plane", "summary": "An example plane for exploring the hierarchy. This is not established campaign lore." },
+    { "id": "example-galaxy", "parentId": "example-wish-plane", "kind": "galaxy", "name": "Example galaxy", "summary": "A galaxy can contain many systems. Published systems appear in their mapped positions; select one to visit its worlds." },
+    { "id": "example-second-galaxy", "parentId": "example-wish-plane", "kind": "galaxy", "name": "Second example galaxy", "summary": "A second galaxy demonstrates that a single plane can contain multiple galaxies." },
+    { "id": "example-hollow-galaxy", "parentId": "example-hollow-plane", "kind": "galaxy", "name": "Example Hollow galaxy", "summary": "A sample galaxy within the Hollow. No systems have been published here yet." },
+    { "id": "example-system", "parentId": "example-galaxy", "kind": "system", "name": "Example system", "summary": "A sample star system. Choose a world on the map to read its published entry.", "position": { "x": 100, "y": 150 } },
+    { "id": "example-distant-system", "parentId": "example-galaxy", "kind": "system", "name": "Distant example system", "summary": "A second system demonstrates map navigation. No worlds have been published here yet.", "position": { "x": 650, "y": 420 } },
+    { "id": "example-world", "parentId": "example-system", "kind": "planet", "name": "Example world", "summary": "A world at the smallest level of this first atlas. Future editions can add the names, places, and histories the party has discovered." },
+    { "id": "example-second-world", "parentId": "example-system", "kind": "planet", "name": "Second example world", "summary": "A second world in the same system. This entry is a demonstration, not campaign canon." }
+  ]
+}
