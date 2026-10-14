@@ -12,10 +12,11 @@ In your existing project, open **Settings → Build** and use:
 | --- | --- |
 | Build command | `npm run build` |
 | Deploy command | `npx wrangler deploy` (the existing `npx wrangler deploy --assets ./dist` also works) |
+| Preview command | `npx wrangler preview` |
 | Root directory | Leave blank |
 | Production branch | `main` |
 
-Merge the deployment-settings PR to `main`; the Git connection should start a fresh build automatically. If it does not, retry the latest deployment. The compatibility date is pinned in the file and does not need to change on each publication. See [Workers build settings](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/) and [compatibility dates](https://developers.cloudflare.com/workers/configuration/compatibility-dates/).
+Merge the deployment-settings PR to `main`; the Git connection should start a fresh build automatically. If it does not, retry the latest deployment. The compatibility date is pinned in the file and does not need to change on each publication. The empty `previews` block enables Cloudflare's branch-preview command; the shared assets directory and compatibility date stay at the top level. No separate secrets or storage bindings are needed for this read-only site. See [Workers build settings](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/), [compatibility dates](https://developers.cloudflare.com/workers/configuration/compatibility-dates/), and [preview configuration](https://developers.cloudflare.com/workers/previews/configuration/).
 
 For an HR address on a Workers project, use **Settings → Domains & Routes → Add → Custom Domain**. Enter the chosen hostname (for example, `atlas` followed by your HR domain). [Workers custom domain instructions](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/). Pages-specific screens in the rest of this guide apply when you create a Pages project instead.
 
