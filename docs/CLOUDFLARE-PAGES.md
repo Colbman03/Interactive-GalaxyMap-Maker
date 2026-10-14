@@ -2,6 +2,26 @@
 
 This PR prepares a static build. It does not create a Cloudflare project, connect GitHub, change DNS, or deploy anything. No Cloudflare token is needed in this repository.
 
+## If you already connected through Cloudflare Workers
+
+Cloudflare's Workers setup can host the same player atlas. The production log identified the connected Worker as `interactive-galaxymap-maker`. The repository's `wrangler.jsonc` now specifies that name, the required compatibility date, and `./dist` as the only uploaded website folder. No Worker script, database, or private campaign storage is required.
+
+In your existing project, open **Settings → Build** and use:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` (the existing `npx wrangler deploy --assets ./dist` also works) |
+| Preview command | `npx wrangler preview` |
+| Root directory | Leave blank |
+| Production branch | `main` |
+
+Merge the deployment-settings PR to `main`; the Git connection should start a fresh build automatically. If it does not, retry the latest deployment. The compatibility date is pinned in the file and does not need to change on each publication. The empty `previews` block enables Cloudflare's branch-preview command; the shared assets directory and compatibility date stay at the top level. No separate secrets or storage bindings are needed for this read-only site. See [Workers build settings](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/), [compatibility dates](https://developers.cloudflare.com/workers/configuration/compatibility-dates/), and [preview configuration](https://developers.cloudflare.com/workers/previews/configuration/).
+
+For an HR address on a Workers project, use **Settings → Domains & Routes → Add → Custom Domain**. Enter the chosen hostname (for example, `atlas` followed by your HR domain). [Workers custom domain instructions](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/). Pages-specific screens in the rest of this guide apply when you create a Pages project instead.
+
+The build and the generated `_headers` stay the same for either platform. Only `dist` is published. GitHub Actions also validates the Worker configuration with Wrangler's dry-run command, which does not upload or deploy the site.
+
 ## Actions for the account owner
 
 1. Review and merge the atlas PR into this fork’s `main` when ready. The old `main` still builds the original editor; do not publish that version as the player atlas. If you need a hosted preview before merging, use the direct-upload option below or explicitly build the PR branch in a separate preview project.

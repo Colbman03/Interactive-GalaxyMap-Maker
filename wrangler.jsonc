@@ -1,0 +1,8 @@
+{
+  "name": "interactive-galaxymap-maker",
+  "compatibility_date": "2026-10-13",
+  "assets": {
+    "directory": "./dist"
+  },
+  "previews": {}
+}

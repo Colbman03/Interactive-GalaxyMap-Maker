@@ -16,3 +16,6 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npm run build
+      - run: npx --yes wrangler@4.150.0 deploy --dry-run
+        env:
+          WRANGLER_SEND_METRICS: 'false'
